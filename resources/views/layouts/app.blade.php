@@ -7,12 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Tamirwellness</title>
+    <title>Нэвтрэх</title>
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700">
     <link rel="stylesheet" href="{{asset('css/login.css')}}" >
 </head>
-<body> 
+<body>
      @yield('content')
 
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
