@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Client;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\ServiceEnglish;
+use App\Mongolia;
 use App\ServiceMongolia;
-class service extends Controller
+class mgl extends Controller
 {
     public function index(){
-        $service = ServiceEnglish::orderBy('updated_at', 'desc')->paginate(5);
-        return view ('client/english/service',['service'=>$service]);
+        $service = Mongolia::orderBy('updated_at', 'desc')->paginate(5);
+        return view ('client/english/mgl',['service'=>$service]);
     }
     public function find($id){
-        $service = ServiceEnglish::findOrFail($id);
-        return view('client/english/service_temp',['service'=>$service]);
+        $service = Mongolia::findOrFail($id);
+        return view('client/english/mgl_temp',['service'=>$service]);
     }
     public function mongolia(){
         $service = ServiceMongolia::all();

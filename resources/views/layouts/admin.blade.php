@@ -29,7 +29,7 @@
     <link href="{{asset('assets/css/paper-dashboard.css?v=2.0.0')}}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('assets/demo/demo.css')}}" rel="stylesheet" />
-    @if (Request::is('admin/service')||Request::is('admin/note'))
+    @if (Request::is('admin/service')||Request::is('admin/note')||Request::is('admin/mongolia'))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('assets/css/editor/froala_editor.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/editor/froala_style.css')}}">
@@ -86,22 +86,27 @@
                 <i class="nc-icon nc-paper"></i>
                 <p>Сэтгэгдэл</p>
               </a>
-            </li>
+            </li><!--
             <li class="{{ Request::is('admin/contact') ? 'active' : '' }}">
                 <a href="{{url('/admin/contact')}}">
                   <i class="nc-icon nc-book-bookmark"></i>
                   <p>Холбоо барих</p>
                 </a>
-              </li>
-              {{-- <li class="{{ Request::is('admin/blank') ? 'active' : '' }}">
-                <a href="{{url('/admin/blank')}}">
+              </li> -->
+              <li class="{{ Request::is('admin/mongolia') ? 'active' : '' }}">
+                <a href="{{url('/admin/mongolia')}}">
                   <i class="nc-icon nc-app"></i>
-                  <p>Blank</p>
-                </a> --}}
+                  <p>Монголдоо</p>
+                </a>
               </li> <li class="{{ Request::is('admin/service') ? 'active' : '' }}">
                 <a href="{{url('/admin/service')}}">
-                  <i class="nc-icon nc-settings-gear-65"></i>
+                  <i class="nc-icon nc-book-bookmark"></i>
                   <p>Зөвөлгөө</p>
+                </a>
+              </li><li class="{{ Request::is('admin/note') ? 'active' : '' }}">
+                <a href="{{url('/admin/note')}}">
+                  <i class="nc-icon nc-paper"></i>
+                  <p>Тэмдэглэл</p>
                 </a>
               </li>
             </li> <li class="{{ Request::is('admin/user') ? 'active' : '' }}">
@@ -198,7 +203,7 @@
 <script src="{{Request::is('admin/home') ? asset('assets/js/home_header.js'): ''}}"></script>
 <script src="{{Request::is('admin/user') ? asset('assets/js/users.js'): ''}}"></script>
 <script src="{{Request::is('admin/profile') ? asset('assets/js/profile.js'): ''}}"></script>
-@if (Request::is('admin/service')||Request::is('admin/note'))
+@if (Request::is('admin/service')||Request::is('admin/note')||Request::is('admin/mongolia'))
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
 <script type="text/javascript" src="{{asset('assets/js/editor/froala_editor.min.js')}}"></script>
@@ -268,6 +273,9 @@
 @endif
 @if (Request::is('admin/note'))
 <script src="{{asset('assets/js/note.js')}}"></script>
+@endif
+@if (Request::is('admin/mongolia'))
+<script src="{{asset('assets/js/mongolia.js')}}"></script>
 @endif
 </body>
 </html>

@@ -25,14 +25,14 @@ $(function() {
     // EDIT AND GET
     function getServiceEnglish() {
         console.log("Getting English services...");
-        $.get("/admin/note/english/get", function(e) {
+        $.get("/admin/mongolia/english/get", function(e) {
             e.forEach(function(item) {
                 $("#english-table").append(
                     `<tr data-key=${item.id} class="english-data">
-                    <td>${item.title} id: ${item.id}</td>
+                    <td>${item.title}</td>
                     <td>${item.desc}</td>
                     <td>${item.updated_at}</td>
-                    <td><a href="/admin/note/english/delete/${
+                    <td><a href="/admin/mongolia/english/delete/${
                         item.id
                     }" class="text-danger delete-service">Delete</a></td>
                     </tr>`
@@ -48,7 +48,7 @@ $(function() {
         $(".card-overlay").show();
         var id = $(this).attr("data-key");
         $("#english .fr-placeholder").hide();
-        $.get("/admin/note/english/" + id, function(e) {
+        $.get("/admin/mongolia/english/" + id, function(e) {
             $("#english #title").val(e.title);
             $("#english #image_description").val(e.desc);
             $("#english #id").val(e.id);

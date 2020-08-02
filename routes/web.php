@@ -12,24 +12,26 @@ use Illuminate\Http\Request;
 */
 // ENGLISH client routes
 Route::get('/',  'Client\index@index');
-Route::get('/blank', 'Client\blank@index');
-Route::get('/blank/{id}', 'Client\blank@find');
-Route::get('/note', 'Client\notes@index');
-Route::get('/note/{id}', 'Client\notes@find');
-Route::get('/service','Client\service@index');
-Route::get('/service/{id}','Client\service@find');
+Route::get('/Аяллын_зөвлөгөө', 'Client\blank@index');
+Route::get('/Аяллын_зөвлөгөө/{id}', 'Client\blank@find');
+Route::get('/Аяллын_тэмдэглэл', 'Client\notes@index');
+Route::get('/Аяллын_тэмдэглэл/{id}', 'Client\notes@find');
+Route::get('/Аяллын_зөвлөгөө','Client\service@index');
+Route::get('/Аяллын_зөвлөгөө/{id}','Client\service@find');
 Route::get('/comment', 'Client\comment@index');
-Route::get('/contact', 'Client\contact@index');
-Route::get('/service', 'Client\service@index');
-Route::get('/about', 'Client\about@index');
+Route::get('/Хаашаа_аялах_вэ/{id}', 'Client\notes@find');
+Route::get('/Бидний_тухай', 'Client\about@index');
+Route::get('/Хаашаа_аялах_вэ', 'Client\header@index');
+Route::get('/Монголдоо_аялцгаая', 'Client\mgl@index');
+Route::get('/Монголдоо_аялцгаая/{id}', 'Client\mgl@find');
 
 Route::get('/mn',  'Client\index@mongolia');
 Route::get('/mn/service','Client\service@mongolia');
 Route::get('/mn/service/{id}','Client\service@findMongolia');
 Route::get('/mn/comment', 'Client\comment@mongolia');
-Route::get('/mn/contact', 'Client\contact@mongolia');
+Route::get('/mn/Хаашаа аялах вэ', 'Client\contact@mongolia');
 Route::get('/mn/service', 'Client\service@mongolia');
-Route::get('/mn/blank', 'Client\blank@index');
+Route::get('/mn/Аяллын зөвлөгөө', 'Client\blank@index');
 
 
 // Client send booking req
@@ -125,6 +127,26 @@ Route::get('/admin/service/mongolia/delete/{id}','adminService@deleteMongolia');
 // FIND BY ID
 Route::get('/admin/service/english/{id}','adminService@findEnglish');
 Route::get('/admin/service/mongolia/{id}','adminService@findMongolian');
+
+
+// Service Routes
+Route::get('/admin/mongolia',[
+    'uses' => 'adminMongolia@index',
+    'middleware' => 'roles',
+    'roles' => ['service', 'admin']
+]);
+// GET ALL DATA
+Route::get('/admin/mongolia/english/get','adminMongolia@getEnglish');
+Route::get('/admin/mongolia/mongolia/get','adminMongolia@getMongolia');
+// SAVE
+Route::post('/admin/mongolia/english','adminMongolia@saveEnglish');
+Route::post('/admin/mongolia/mongolia','adminMongolia@saveMongolia');
+// DELETE BY ID
+Route::get('/admin/mongolia/english/delete/{id}','adminMongolia@deleteEnglish');
+Route::get('/admin/mongolia/mongolia/delete/{id}','adminMongolia@deleteMongolia');
+// FIND BY ID
+Route::get('/admin/mongolia/english/{id}','adminMongolia@findEnglish');
+Route::get('/admin/mongolia/mongolia/{id}','adminMongolia@findMongolian');
 
 // note Routes
 Route::get('/admin/note',[

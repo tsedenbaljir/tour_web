@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('content')
-@section('title','Аяллын_тэмдэглэл')
+@section('title','note')
 @section('posts_title', 'Аялалын Тэмдэглэл')
-@section('text', 'Та бүхэндээ олон олон аялал хүсье ❤️')
+@section('text', 'Монголдоо аялцгаая')
 @section('src', 'users/img/temdeglel.jpg')
 <section class="bg-light" style="font-family: times, serif;">
     @foreach($service as $post)
@@ -12,7 +12,7 @@
         <div class="text" data-aos="fade-left" data-aos-delay="200">
             <h2 style="font-size: 40px">{{ $post->title }}</h2><br><br>
             <p style="font-size: 20px">{!! $post->desc !!}</p>
-            <p class="mt-5"><a href="/Аяллын_тэмдэглэл/{{$post->id}}" class="btn btn-primary uppercase">
+            <p class="mt-5"><a href="/Хаашаа_аялах_вэ/{{$post->id}}" class="btn btn-primary uppercase">
             Дэлгэрэнгүй</a></p>
         </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="text" data-aos="fade-left" data-aos-delay="200">
             <h2 style="font-size: 40px">{{ $post->title }}</h2><br><br>
             <p style="font-size: 20px">{!! $post->desc !!}</p>
-            <p class="mt-5"><a href="/Аяллын_тэмдэглэл/{{$post->id}}" class="btn btn-primary uppercase">
+            <p class="mt-5"><a href="/Хаашаа_аялах_вэ/{{$post->id}}" class="btn btn-primary uppercase">
             Дэлгэрэнгүй</a></p>
         </div>
     </div>
@@ -30,6 +30,10 @@
     @endforeach
 
 </section>
+
+<div class="Page navigation example">
+    {{$service->links()}}
+</div>
 <!-- END section -->
 {{-- <section class="section slider-section">
     <div class="container">
