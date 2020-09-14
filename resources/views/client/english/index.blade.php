@@ -113,33 +113,33 @@
         <br>
         <div class="row">
             <div id="fiveMenu" class="col-lg-2 col-md-2 visit mb-2" data-aos="fade-right">
-                <a href="/contact">
+                <a href="/Хаашаа_аялах_вэ">
                     <img src="{{ asset('users/img/template.jpg') }}" alt="Image placeholder" class="img-fluid" height="63%"> </a>
-                <h3><a href="/contact" style="font-size: 13px;">Хаашаа аялах вэ?</a></h3>
+                <h3><a href="#" style="font-size: 13px;">Хаашаа аялах вэ?</a></h3>
                 <div class="reviews-star float-left">
                 </div>
             </div>
             <div id="fiveMenu" class="col-lg-2 col-md-2 visit mb-2" data-aos="fade-right" data-aos-delay="100">
-                <a href="note"><img src="{{ asset('users/img/template2.jpg') }}" alt="Image placeholder" class="img-fluid" height="63%"> </a>
-                <h3><a href="restaurant.html" style="font-size: 13px">&nbsp;Аяллын хөтөч</a></h3>
+                <a href="Монголдоо_аялцгаая"><img src="{{ asset('users/img/template2.jpg') }}" alt="Image placeholder" class="img-fluid" height="63%"> </a>
+                <h3><a href="#" style="font-size: 13px">&nbsp;Аяллын хөтөч</a></h3>
                 <div class="reviews-star float-left">
                 </div>
             </div>
             <div id="fiveMenu" class="col-lg-2 col-md-2 visit mb-2" data-aos="fade-right" data-aos-delay="200">
-                <a href="note"><img src="{{ asset('users/img/template3.jpg') }}" alt="Image placeholder" class="img-fluid" style=""> </a>
-                <h3><a href="/note" style="font-size: 13px">Аяллын тэмдэглэл</a></h3>
+                <a href="/Аяллын_тэмдэглэл"><img src="{{ asset('users/img/template3.jpg') }}" alt="Image placeholder" class="img-fluid" style=""> </a>
+                <h3><a href="#" style="font-size: 13px">Аяллын тэмдэглэл</a></h3>
                 <div class="reviews-star float-left">
                 </div>
             </div>
             <div id="fiveMenu" class="col-lg-2 col-md-2 visit mb-2" data-aos="fade-right" data-aos-delay="300">
-                <a href="blank"><img src="{{ asset('users/img/template5.jpg') }}" alt="Image placeholder" class="img-fluid" height="63%"> </a>
-                <h3><a href="yacht.html" style="font-size: 13px">Аяллын зөвлөгөө</a></h3>
+                <a href="Аяллын_зөвлөгөө"><img src="{{ asset('users/img/template5.jpg') }}" alt="Image placeholder" class="img-fluid" height="63%"> </a>
+                <h3><a href="#" style="font-size: 13px">Аяллын зөвлөгөө</a></h3>
                 <div class="reviews-star float-left">
                 </div>
             </div>
             <div id="fiveMenu" class="col-lg-2 col-md-2 visit mb-2" data-aos="fade-right" data-aos-delay="300">
-                <a href="blank"><img src="{{ asset('users/img/template4.jpg') }}" alt="Image placeholder" class="img-fluid" height="63%"> </a>
-                <h3><a href="yacht.html" style="font-size: 13px">&nbsp;Мэдээ Мэдээлэл</a></h3>
+                <a href="/Аяллын_зөвлөгөө"><img src="{{ asset('users/img/template4.jpg') }}" alt="Image placeholder" class="img-fluid" height="63%"> </a>
+                <h3><a href="#" style="font-size: 13px">&nbsp;Мэдээ Мэдээлэл</a></h3>
                 <div class="reviews-star float-left">
                 </div>
             </div>

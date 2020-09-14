@@ -1,5 +1,8 @@
 <?php
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,17 +15,19 @@ use Illuminate\Http\Request;
 */
 // ENGLISH client routes
 Route::get('/',  'Client\index@index');
-Route::get('/Аяллын_зөвлөгөө', 'Client\blank@index');
-Route::get('/Аяллын_зөвлөгөө/{id}', 'Client\blank@find');
-Route::get('/Аяллын_тэмдэглэл', 'Client\notes@index');
-Route::get('/Аяллын_тэмдэглэл/{id}', 'Client\notes@find');
-Route::get('/Аяллын_зөвлөгөө','Client\service@index');
-Route::get('/Аяллын_зөвлөгөө/{id}','Client\service@find');
 Route::get('/comment', 'Client\comment@index');
-Route::get('/Хаашаа_аялах_вэ/{id}', 'Client\notes@find');
 Route::get('/Бидний_тухай', 'Client\about@index');
-Route::get('/Хаашаа_аялах_вэ', 'Client\header@index');
 Route::get('/Монголдоо_аялцгаая', 'Client\mgl@index');
+Route::get('/Аяллын_тэмдэглэл', 'Client\notes@index');
+Route::get('/Мэдээ_мэдээлэл', 'Client\news@index');
+Route::get('/Аяллын_зөвлөгөө', 'Client\blank@index');
+Route::get('/Хаашаа_аялах_вэ', 'Client\header@index');
+Route::get('/Аяллын_зөвлөгөө','Client\service@index');
+Route::get('/Мэдээ_мэдээлэл/{id}', 'Client\find@index');
+Route::get('/Аяллын_зөвлөгөө/{id}','Client\service@find');
+// Route::get('/Аяллын_зөвлөгөө/{id}', 'Client\blank@find');
+Route::get('/Хаашаа_аялах_вэ/{id}', 'Client\notes@find');
+Route::get('/Аяллын_тэмдэглэл/{id}', 'Client\notes@find');
 Route::get('/Монголдоо_аялцгаая/{id}', 'Client\mgl@find');
 
 Route::get('/mn',  'Client\index@mongolia');
@@ -162,6 +167,22 @@ Route::post('/admin/note/english','adminNote@saveEnglish');
 Route::get('/admin/note/english/delete/{id}','adminNote@deleteEnglish');
 // FIND BY ID
 Route::get('/admin/note/english/{id}','adminNote@findEnglish');
+
+
+// note Routes
+Route::get('/admin/news',[
+    'uses' => 'adminNews@index',
+    'middleware' => 'roles',
+    'roles' => ['service', 'admin']
+]);
+// GET ALL DATA
+Route::get('/admin/news/english/get','adminNews@getEnglish');
+// SAVE
+Route::post('/admin/news/english','adminNews@saveEnglish');
+// DELETE BY ID
+Route::get('/admin/news/english/delete/{id}','adminNews@deleteEnglish');
+// FIND BY ID
+Route::get('/admin/news/english/{id}','adminNews@findEnglish');
 
 // Profile Routes
 Route::get('/admin/profile','adminProfile@index');

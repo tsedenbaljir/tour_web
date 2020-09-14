@@ -29,7 +29,7 @@
     <link href="{{asset('assets/css/paper-dashboard.css?v=2.0.0')}}" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{asset('assets/demo/demo.css')}}" rel="stylesheet" />
-    @if (Request::is('admin/service')||Request::is('admin/note')||Request::is('admin/mongolia'))
+    @if (Request::is('admin/service')||Request::is('admin/note')||Request::is('admin/mongolia')||Request::is('admin/news'))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('assets/css/editor/froala_editor.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/editor/froala_style.css')}}">
@@ -69,12 +69,12 @@
                 <p>Удирдах самбар</p>
               </a>
             </li>
-            {{-- <li class="{{ Request::is('admin/book') ? 'active' : '' }}">
-              <a href="{{ url('/admin/book')}}">
+            <li class="{{ Request::is('admin/book') ? 'active' : '' }}">
+              <a href="{{ url('/admin/news')}}">
                 <i class="nc-icon nc-bell-55"></i>
-                <p>Inbox</p>
+                <p>Мэдээ мэдээлэл</p>
               </a>
-            </li> --}}
+            </li>
             <li class="{{ Request::is('admin/home') ? 'active' : '' }}">
                 <a href="{{url('/admin/home')}}">
                 <i class="nc-icon nc-image"></i>
@@ -203,7 +203,7 @@
 <script src="{{Request::is('admin/home') ? asset('assets/js/home_header.js'): ''}}"></script>
 <script src="{{Request::is('admin/user') ? asset('assets/js/users.js'): ''}}"></script>
 <script src="{{Request::is('admin/profile') ? asset('assets/js/profile.js'): ''}}"></script>
-@if (Request::is('admin/service')||Request::is('admin/note')||Request::is('admin/mongolia'))
+@if (Request::is('admin/service')||Request::is('admin/note')||Request::is('admin/mongolia')||Request::is('admin/news'))
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
 <script type="text/javascript" src="{{asset('assets/js/editor/froala_editor.min.js')}}"></script>
@@ -276,6 +276,9 @@
 @endif
 @if (Request::is('admin/mongolia'))
 <script src="{{asset('assets/js/mongolia.js')}}"></script>
+@endif
+@if (Request::is('admin/news'))
+<script src="{{asset('assets/js/news.js')}}"></script>
 @endif
 </body>
 </html>

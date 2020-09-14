@@ -34,7 +34,7 @@ class adminBook extends Controller
     return view('admin/book');
    }
    public function save(Request $request)
-   {  
+   {
        $book = new Book;
        $book->name = $request->name;
        $book->email = $request->email;
@@ -59,7 +59,7 @@ class adminBook extends Controller
        $d->start_date = $data->start_date;
        $d->end_date = $data->end_date;
        $d->created_at = $data->created_at->diffForHumans();
-       
+
        return response()->json($d);
    }
    public function update(Request $request){
