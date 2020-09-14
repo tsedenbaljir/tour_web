@@ -1,0 +1,25 @@
+.ads{
+    right: 0;
+    top: 20px;
+    width: 20%;
+    z-index: 10;
+    height: 30%;
+    margin:20px;
+    padding: 20px;
+    color: white;
+    display: none;
+    position: fixed;
+    font-size: small;
+    line-height: 15px;
+    border-radius: 30px;
+    background-color: rgb(42, 160, 12);
+    box-shadow: 0 0 10px rgb(95, 95, 95);
+}
+.exitAds{
+    top: 0;
+    right: 0;
+    line-height: 18px;
+    position: absolute;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}

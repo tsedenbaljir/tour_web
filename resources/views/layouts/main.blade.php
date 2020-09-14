@@ -28,9 +28,25 @@
     <link rel="stylesheet" href="{{ asset('users/fonts/fontawesome/css/font-awesome.min.css')}}">
     <!-- Theme Style -->
     <link rel="stylesheet" href="{{ asset('users/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('users/css/ads.css')}}">
 </head>
 <body>
+    <div id="ads" class="ads">
+        <button class="exitAds btn-danger" onclick="myFunction()">x</button>
+        <img src="http://127.0.0.1:8000/users/img/img_5.jpg" width="50%" style="float: left;margin-right: 7px;" />
+        Бид энэ хорвоод ганцхан л ☝️ амьдрах болохоор энэ орчлонгийн хамгийн сайхныг мэдрэх ёстой биз.
+        Миний хувьд очиж байсан газруудаас сэтгэлд тод үлдсэн орнуудын нэг ТУРК улс байсан шүү.
+    </div>
+    <script>
+        setTimeout(
+        function myFunction() {
+            document.getElementById("ads").style.display = "inline";
+        }, 8000);
+        function myFunction() {
+            document.getElementById("ads").style.display = "none";
+        }
 
+    </script>
     <header class="site-header">
         <div class="container-fluid">
             <div class="row">
@@ -55,7 +71,6 @@
                                             <li class=" {{ Request::is('Монголдоо_аялцгаая*') ? 'active' : '' }}"><a href="{{ asset('Монголдоо_аялцгаая/') }}">Монголдоо аялцгаая</a></li>
                                             <li class=" {{ Request::is('Аяллын_тэмдэглэл*') ? 'active' : '' }}"><a href="{{ asset('Аяллын_тэмдэглэл/') }}">Аяллын тэмдэглэл</a></li>
                                             <li class=" {{ Request::is('Аяллын_зөвлөгөө*') ? 'active' : '' }}"><a href="{{ asset('Аяллын_зөвлөгөө/') }}">Аяллын зөвлөгөө</a></li>
-
                                             <li class=" {{ Request::is('Мэдээ_мэдээлэл*') ? 'active' : '' }}"><a href="{{ asset('Мэдээ_мэдээлэл/') }}">Мэдээ мэдээлэл</a></li>
                                             <li class=" {{ Request::is('Бидний_тухай*') ? 'active' : '' }}"><a href="{{ asset('Бидний_тухай/') }}">Бидний тухай</a></li>
                                         </ul>
@@ -319,8 +334,10 @@
             background-color: #3B5998;
         }
 
-        p[data-f-id="pbf"]{
-        display:none;}
+        p[data-f-id="pbf"] {
+            display: none;
+        }
+
     </style>
     {{-- social end --}}
     <!-- Footer -->
